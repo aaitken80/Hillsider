@@ -13,6 +13,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { PeopleComponent } from '../../people/people.component';
 import { GardensComponent } from '../../gardens/gardens.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {
   MatButtonModule,
@@ -29,6 +30,7 @@ import {
     MatRippleModule,
     MatInputModule,
     MatTooltipModule,
+    NgbModule
   ],
   declarations: [
     DashboardComponent,

@@ -1,4 +1,6 @@
-class People {
+import {Deserializable} from "./deserializable.model";
+
+export default class People implements Deserializable {
     _id:string;
     title: string;
     firstName: string;
@@ -12,6 +14,11 @@ class People {
     mobilePhone: string;
     createdDate: Date;
     status: string;
+
+    deserialize(input: any): this {
+        Object.assign(this, input);
+        return this;
+      }
 
     constructor(
     ){
@@ -27,6 +34,8 @@ class People {
         this.mobilePhone = ""
         this.createdDate = new Date()
     }
-}
 
-export default People;
+    getFullName() {
+        return this.firstName + ' ' + this.surname;
+      }
+}

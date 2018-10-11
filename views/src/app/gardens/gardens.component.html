@@ -1,3 +1,64 @@
-<p>
-  gardens works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="card-header card-header-success">
+              <h4 class="card-title ">Gardens</h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="text-primary">
+                    <tr>
+                      <th>Title</th>
+                      <th>Description</th>
+                      <th>Owner</th>
+                      <th>Created Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="garden" (dblclick)="editGarden(garden)" *ngFor="let garden of gardenList">
+                      <ng-container>
+                        <td>{{garden.title}}</td>
+                        <td>{{garden.description}}</td>
+                        <td>{{garden.owner ? garden.owner.getFullName() : ""}}</td>
+                        <td>{{garden.createdDate | date: format}}</td>
+                      </ng-container>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Create Garden</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" name="title" id="title" [(ngModel)]="newGarden.title" placeholder="Title" class="form-control">
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Description" type="text" name="description" id="description" [(ngModel)]="newGarden.description" class="md-textarea md-textarea-auto form-control" mdbInputDirective></textarea>
+                </mat-form-field>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="create();modal.close('Save click')">Save</button>
+        </div>
+      </ng-template>
+      
+      <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Add Garden</button>
+  </div>
+</div>

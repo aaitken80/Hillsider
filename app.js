@@ -1,13 +1,13 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var bluebird = require('bluebird')
+var bluebird = require('bluebird');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
 //connect to MongoDB
-mongoose.Promise = bluebird
+mongoose.Promise = bluebird;
 mongoose.connect('mongodb://localhost/testForAuth');
 var db = mongoose.connection;
 
@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/templateLogReg'));
 
 // include routes
-var api = require('./routes/api.route')
+var api = require('./routes/api.route');
 
 var routes = require('./routes/router');
 app.use('/', routes);

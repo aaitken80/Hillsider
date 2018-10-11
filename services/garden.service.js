@@ -46,7 +46,7 @@ exports.createGarden = async function(garden){
 
         // Saving the Garden 
 
-        var savedGarden = await newGarden.save()
+        var savedGarden = await newGarden.save();
 
         return savedGarden;
     }catch(e){

@@ -6,10 +6,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { PeopleService } from './services/people.service';
+import { GardenService } from './services/garden.service';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 
 
@@ -36,6 +38,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    NgbModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -45,7 +48,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AdminLayoutComponent,
   ],
   providers: [
-    PeopleService
+    PeopleService,
+    GardenService
   ],
   bootstrap: [AppComponent]
 })
