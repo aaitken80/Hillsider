@@ -1,0 +1,91 @@
+<div class="logo">
+    <span class="simple-text">
+        <div class="logo-img">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                width="274.000000pt" height="165.000000pt" viewBox="0 0 274.000000 165.000000"
+                preserveAspectRatio="xMidYMid meet"
+                class="hs-logo">
+                <metadata>
+                Created by potrace 1.15, written by Peter Selinger 2001-2017
+                </metadata>
+                <g transform="translate(0.000000,165.000000) scale(0.100000,-0.100000)"
+                fill="#000000" stroke="none">
+                <path class="logo-path" d="M1945 1466 c-171 -33 -296 -114 -355 -230 -32 -64 -35 -76 -35 -160
+                0 -77 5 -100 26 -146 34 -71 88 -124 169 -165 76 -38 132 -55 292 -89 64 -13
+                133 -32 153 -42 105 -49 100 -156 -9 -208 l-55 -26 -330 0 -331 0 0 520 0 520
+                -160 0 -160 0 0 -225 0 -225 -184 0 -185 0 66 148 c36 81 71 163 78 183 7 20
+                22 54 34 76 11 22 17 43 14 47 -4 3 -81 6 -173 6 l-166 0 -34 -77 c-19 -43
+                -141 -321 -273 -618 -131 -297 -241 -546 -244 -553 -4 -10 31 -12 172 -10
+                l178 3 121 277 121 278 238 0 237 0 0 -275 0 -275 539 0 c509 0 542 1 603 20
+                125 39 227 123 277 230 35 75 37 220 4 291 -56 124 -178 190 -458 249 -140 29
+                -192 48 -215 77 -26 33 -26 83 1 117 91 116 373 95 574 -44 74 -51 75 -50 75
+                115 l0 144 -67 21 c-178 53 -401 73 -538 46z"/>
+                </g>
+                <filter id="pictureFilter">
+                    <feTurbulence type="turbulence" baseFrequency="0.05"
+                        numOctaves="2" result="turbulence"/>
+                    <feDisplacementMap in2="turbulence" in="SourceGraphic"
+                        scale="50" xChannelSelector="R" yChannelSelector="G"/>
+                </filter>
+            </svg>
+        </div>
+    Hillsider
+    </span>
+</div>
+<div class="sidebar-wrapper">
+  <div *ngIf="isMobileMenu()">
+    <form class="navbar-form">
+      <span class="bmd-form-group">
+        <div class="input-group no-border">
+          <input type="text" value="" class="form-control" placeholder="Search...">
+          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+            <div class="ripple-container"></div>
+          </button>
+        </div>
+      </span>
+    </form>
+    <ul class="nav navbar-nav nav-mobile-menu">
+        <li class="nav-item">
+            <a class="nav-link" href="#pablo">
+                <i class="material-icons">dashboard</i>
+                <p>
+                    <span class="d-lg-none d-md-block">Stats</span>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="#pablo" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">notifications</i>
+                <span class="notification">5</span>
+                <p>
+                    <span class="d-lg-none d-md-block">Some Actions</span>
+                </p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                <a class="dropdown-item" href="#">Another Notification</a>
+                <a class="dropdown-item" href="#">Another One</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#pablo">
+                <i class="material-icons">person</i>
+                <p>
+                    <span class="d-lg-none d-md-block">Account</span>
+                </p>
+            </a>
+        </li>
+    </ul>
+  </div>
+    <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>
